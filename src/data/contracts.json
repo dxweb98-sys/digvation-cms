@@ -1,0 +1,602 @@
+[
+  {
+    "id": "poseidon",
+    "name": "Poseidon Filter",
+    "domain": "poseidonfilter.id",
+    "url": "https://poseidonfilter.id",
+    "initials": "P",
+    "industry": "Teknologi filtrasi air",
+    "color": "#2864e9",
+    "contractVersion": "1.0",
+    "description": "Solusi filtrasi air untuk rumah, bisnis, dan industri.",
+    "modules": [
+      {
+        "id": "home",
+        "label": "Beranda",
+        "singular": "Beranda",
+        "icon": "home",
+        "document": "site",
+        "titlePath": "metadata.title",
+        "description": "Sambutan pertama yang dilihat pengunjung website Anda.",
+        "fields": [
+          {
+            "path": "copy.views-home-HeroSlider.poseidonWaterFiltrationSolutions",
+            "label": "Label pembuka",
+            "type": "text"
+          },
+          {
+            "path": "copy.views-home-HeroSlider.membraneTechnology",
+            "label": "Judul utama",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "copy.views-home-HeroSlider.forConsistentWaterQuality",
+            "label": "Lanjutan judul",
+            "type": "text"
+          },
+          {
+            "path": "copy.views-home-HeroSlider.solusiFiltrasiReverseOsmosisDanUltrafiltrasi",
+            "label": "Deskripsi hero",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "copy.views-home-HeroSlider.lihatProduk",
+            "label": "Tombol produk",
+            "type": "text"
+          },
+          {
+            "path": "copy.views-home-HeroSlider.konsultasiKebutuhan",
+            "label": "Tombol konsultasi",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "products",
+        "label": "Produk",
+        "singular": "Produk",
+        "icon": "box",
+        "document": "products",
+        "collection": "items",
+        "titlePath": "Serie",
+        "subtitlePath": "Description",
+        "imagePath": "Images.0",
+        "description": "Atur katalog, spesifikasi, dan foto produk Poseidon.",
+        "defaults": {
+          "No": 0,
+          "Serie": "",
+          "Images": [],
+          "detail": {},
+          "Description": "",
+          "categoryId": "category-1",
+          "subcategoryId": "category-1-sub-1",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "Serie",
+            "label": "Nama / seri produk",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "Description",
+            "label": "Deskripsi produk",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "categoryId",
+            "label": "Kategori",
+            "type": "select",
+            "optionsPath": "products.categories",
+            "required": true
+          },
+          {
+            "path": "subcategoryId",
+            "label": "Subkategori",
+            "type": "select",
+            "optionsPath": "products.subcategories",
+            "required": true
+          },
+          {
+            "path": "Images",
+            "label": "Foto produk",
+            "type": "images",
+            "required": true,
+            "hint": "Foto pertama menjadi gambar utama produk."
+          },
+          {
+            "path": "detail",
+            "label": "Spesifikasi produk",
+            "type": "specs",
+            "hint": "Tambahkan pasangan nama dan nilai spesifikasi."
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "articles",
+        "label": "Artikel",
+        "singular": "Artikel",
+        "icon": "file",
+        "document": "articles",
+        "collection": "items",
+        "titlePath": "title",
+        "subtitlePath": "body",
+        "imagePath": "images.0",
+        "description": "Bagikan wawasan, berita, dan cerita terbaru.",
+        "defaults": {
+          "title": "",
+          "body": "",
+          "bodyHtml": "",
+          "images": [],
+          "tags": [],
+          "author": "Tim Poseidon",
+          "created_by": "Admin",
+          "created_at": "24-10-2026",
+          "displayDate": "24 - 10 - 2026",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "title",
+            "label": "Judul",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "body",
+            "label": "Ringkasan",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "bodyHtml",
+            "label": "Isi artikel",
+            "type": "richtext",
+            "required": true
+          },
+          {
+            "path": "images",
+            "label": "Gambar artikel",
+            "type": "images"
+          },
+          {
+            "path": "tags",
+            "label": "Tag artikel",
+            "type": "tags"
+          },
+          {
+            "path": "author",
+            "label": "Penulis",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "displayDate",
+            "label": "Tanggal tampil",
+            "type": "text"
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "gallery",
+        "label": "Galeri",
+        "singular": "Foto",
+        "icon": "image",
+        "document": "gallery",
+        "collection": "items",
+        "titlePath": "title",
+        "subtitlePath": "category",
+        "imagePath": "image",
+        "description": "Tampilkan produk dan kegiatan melalui foto.",
+        "defaults": {
+          "title": "",
+          "image": "",
+          "category": "Model",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "title",
+            "label": "Judul",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "image",
+            "label": "Gambar",
+            "type": "image",
+            "required": true
+          },
+          {
+            "path": "category",
+            "label": "Kelompok foto",
+            "type": "select",
+            "options": [
+              {
+                "value": "Model",
+                "label": "Model"
+              },
+              {
+                "value": "Product",
+                "label": "Product"
+              },
+              {
+                "value": "Team Work",
+                "label": "Team Work"
+              }
+            ]
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "about",
+        "label": "Tentang kami",
+        "singular": "Profil perusahaan",
+        "icon": "building",
+        "document": "about",
+        "titlePath": "header.title",
+        "imagePath": "header.bg",
+        "description": "Ceritakan identitas dan perjalanan perusahaan.",
+        "fields": [
+          {
+            "path": "header.title",
+            "label": "Judul halaman",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "header.bg",
+            "label": "Gambar pembuka",
+            "type": "image"
+          },
+          {
+            "path": "aboutCompany.text",
+            "label": "Paragraf profil perusahaan",
+            "type": "tags",
+            "required": true,
+            "hint": "Setiap baris menjadi satu paragraf."
+          }
+        ]
+      },
+      {
+        "id": "faq",
+        "label": "Tanya jawab",
+        "singular": "Pertanyaan",
+        "icon": "help",
+        "document": "home",
+        "collection": "faq",
+        "titlePath": "question",
+        "subtitlePath": "answer",
+        "description": "Jawaban yang membantu calon pelanggan Anda.",
+        "defaults": {
+          "question": "",
+          "answer": "",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "question",
+            "label": "Pertanyaan",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "answer",
+            "label": "Jawaban",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "Kontak & global",
+        "singular": "Informasi website",
+        "icon": "phone",
+        "document": "site",
+        "titlePath": "metadata.title",
+        "description": "Identitas website, kontak, dan informasi footer.",
+        "fields": [
+          {
+            "path": "metadata.title",
+            "label": "Nama website",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "footer.contact.whatsapp",
+            "label": "Nomor WhatsApp",
+            "type": "text"
+          },
+          {
+            "path": "footer.contact.email",
+            "label": "Alamat email",
+            "type": "tags"
+          },
+          {
+            "path": "footer.address",
+            "label": "Alamat perusahaan",
+            "type": "tags",
+            "hint": "Satu baris untuk setiap bagian alamat."
+          },
+          {
+            "path": "footer.socmed.instagram",
+            "label": "Instagram",
+            "type": "text"
+          },
+          {
+            "path": "footer.socmed.shopee",
+            "label": "Shopee",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arunika",
+    "name": "Arunika Studio",
+    "domain": "arunika.example",
+    "initials": "A",
+    "industry": "Arsitektur & interior",
+    "description": "Ruang yang dirancang dengan cerita dan karakter.",
+    "color": "#8b5cf6",
+    "contractVersion": "1.0",
+    "modules": [
+      {
+        "id": "home",
+        "label": "Beranda",
+        "singular": "Beranda",
+        "icon": "home",
+        "document": "home",
+        "titlePath": "title",
+        "description": "Perkenalkan karakter dan cerita studio Anda.",
+        "fields": [
+          {
+            "path": "title",
+            "label": "Judul",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "subtitle",
+            "label": "Deskripsi pembuka",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "ctaLabel",
+            "label": "Teks tombol utama",
+            "type": "text"
+          },
+          {
+            "path": "cover",
+            "label": "Gambar hero",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "id": "services",
+        "label": "Layanan",
+        "singular": "Layanan",
+        "icon": "layers",
+        "document": "services",
+        "collection": "items",
+        "titlePath": "title",
+        "subtitlePath": "description",
+        "imagePath": "cover",
+        "description": "Bantu calon client menemukan layanan yang tepat.",
+        "defaults": {
+          "title": "",
+          "description": "",
+          "category": "Hunian",
+          "cover": "",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "title",
+            "label": "Judul",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "description",
+            "label": "Deskripsi",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "category",
+            "label": "Bidang layanan",
+            "type": "select",
+            "options": [
+              {
+                "value": "Hunian",
+                "label": "Hunian"
+              },
+              {
+                "value": "Komersial",
+                "label": "Komersial"
+              },
+              {
+                "value": "Konsultasi",
+                "label": "Konsultasi"
+              }
+            ]
+          },
+          {
+            "path": "cover",
+            "label": "Gambar layanan",
+            "type": "image"
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "label": "Portofolio",
+        "singular": "Proyek",
+        "icon": "folder",
+        "document": "projects",
+        "collection": "items",
+        "titlePath": "title",
+        "subtitlePath": "location",
+        "imagePath": "cover",
+        "description": "Cerita dan hasil karya terbaik Arunika.",
+        "defaults": {
+          "title": "",
+          "description": "",
+          "location": "",
+          "year": 2026,
+          "cover": "",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "title",
+            "label": "Judul",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "description",
+            "label": "Deskripsi",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "path": "location",
+            "label": "Lokasi",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "year",
+            "label": "Tahun proyek",
+            "type": "number"
+          },
+          {
+            "path": "cover",
+            "label": "Foto proyek",
+            "type": "image"
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "team",
+        "label": "Tim studio",
+        "singular": "Anggota tim",
+        "icon": "users",
+        "document": "team",
+        "collection": "items",
+        "titlePath": "name",
+        "subtitlePath": "role",
+        "imagePath": "photo",
+        "description": "Kenalkan orang-orang di balik setiap karya.",
+        "defaults": {
+          "name": "",
+          "role": "",
+          "bio": "",
+          "photo": "",
+          "visible": true
+        },
+        "fields": [
+          {
+            "path": "name",
+            "label": "Nama lengkap",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "role",
+            "label": "Peran",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "bio",
+            "label": "Biografi singkat",
+            "type": "textarea"
+          },
+          {
+            "path": "photo",
+            "label": "Foto profil",
+            "type": "image"
+          },
+          {
+            "path": "visible",
+            "label": "Tampilkan di website",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "Kontak studio",
+        "singular": "Kontak studio",
+        "icon": "phone",
+        "document": "contact",
+        "titlePath": "email",
+        "description": "Buka percakapan dengan calon client.",
+        "fields": [
+          {
+            "path": "email",
+            "label": "Email studio",
+            "type": "text",
+            "required": true
+          },
+          {
+            "path": "phone",
+            "label": "Telepon",
+            "type": "text"
+          },
+          {
+            "path": "address",
+            "label": "Alamat studio",
+            "type": "textarea"
+          },
+          {
+            "path": "instagram",
+            "label": "Instagram",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+]
